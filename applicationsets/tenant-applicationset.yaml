@@ -12,14 +12,14 @@ spec:
           - path: "argocd/tenants-discovery/**/config.json"
   template:
     metadata:
-      name: '{{k8s_cluster.name}}-nginx-temp'
+      name: '{{tenant.name}}-nginx-temp'
       namespace: argocd
     spec:
       project: my-apps
       source:
         repoURL: https://github.com/nasirudheen/argo-nginx.git 
         targetRevision: main
-        path: 'tenants/{{k8s_cluster.name}}/nginx'
+        path: 'tenants/{{tenant.name}}/nginx'
         helm:
           valueFiles:
             - values.yaml
