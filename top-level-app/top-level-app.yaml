@@ -9,7 +9,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   # The project the application belongs to.
-  project: default
+  project: my-apps
   source:
     repoURL: https://github.com/nasirudheen/argo-nginx.git
     targetRevision: main 

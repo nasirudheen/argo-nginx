@@ -4,16 +4,16 @@ metadata:
   name: my-tenants
 spec:
   generators:
-    - git:
+    - gi
         repoURL: https://github.com/nasirudheen/argo-nginx.git
         revision: main
         files:
           - path: "argocd/tenants-discovery/**/config.json"
   template:
     metadata:
-      name: '{{tenant.id}}'
+      name: cluster2-temp1
     spec:
-      project: default
+      project: my-apps
       source:
         repoURL: https://github.com/nasirudheen/argo-nginx.git 
         targetRevision: main
