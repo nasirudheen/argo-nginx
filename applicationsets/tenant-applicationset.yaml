@@ -8,7 +8,7 @@ spec:
         repoURL: https://github.com/nasirudheen/argo-nginx.git
         revision: main
         files:
-          - path: "argocd/tenants-discovery/**/config.json"
+          - path: "argo/tenants-discovery/**/config.json"
   template:
     metadata:
       name: '{{tenant.id}}'
