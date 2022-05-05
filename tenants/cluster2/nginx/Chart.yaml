@@ -1,29 +1,30 @@
+annotations:
+  category: Infrastructure
 apiVersion: v2
-name: prometheus
-appVersion: 2.34.0
-version: 15.8.5
-description: Prometheus is a monitoring system and time series database.
-home: https://prometheus.io/
-icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
-sources:
-  - https://github.com/prometheus/alertmanager
-  - https://github.com/prometheus/prometheus
-  - https://github.com/prometheus/pushgateway
-  - https://github.com/prometheus/node_exporter
-  - https://github.com/kubernetes/kube-state-metrics
-maintainers:
-  - name: gianrubio
-    email: gianrubio@gmail.com
-  - name: zanhsieh
-    email: zanhsieh@gmail.com
-  - name: Xtigyro
-    email: miroslav.hadzhiev@gmail.com
-  - name: naseemkullah
-    email: naseem@transit.app
-engine: gotpl
-type: application
+appVersion: 2.4.53
 dependencies:
-  - name: kube-state-metrics
-    version: "4.7.*"
-    repository: https://prometheus-community.github.io/helm-charts
-    condition: kubeStateMetrics.enabled
+  - name: common
+    repository: https://charts.bitnami.com/bitnami
+    tags:
+      - bitnami-common
+    version: 1.x.x
+description: Apache HTTP Server is an open-source HTTP server. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.
+engine: gotpl
+home: https://github.com/bitnami/charts/tree/master/bitnami/apache
+icon: https://bitnami.com/assets/stacks/apache/img/apache-stack-220x234.png
+keywords:
+  - apache
+  - http
+  - https
+  - www
+  - web
+  - reverse proxy
+maintainers:
+  - email: containers@bitnami.com
+    name: Bitnami
+name: apache
+sources:
+  - https://github.com/bitnami/bitnami-docker-apache
+  - https://httpd.apache.org
+version: 9.0.17
+
