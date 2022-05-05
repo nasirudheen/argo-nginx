@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-tenants
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/nasirudheen/argo-nginx.git
+        revision: main
+        files:
+          - path: "argocd/tenants-discovery/**/config.json"
+  template:
+    metadata:
+      name: '{{tenant.id}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/nasirudheen/argo-nginx.git 
+        targetRevision: main
+        path: 'tenants/{{tenant.id}}/nginx'
+        helm:
+          valueFiles:
+            - values.yaml
+      destination:
+        server: '{{k8s_cluster.address}}'
+        namespace: '{{k8s_cluster.namespace}}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+
