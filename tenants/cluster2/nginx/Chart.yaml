@@ -1,30 +1,26 @@
 annotations:
-  category: Infrastructure
+  category: Database
 apiVersion: v2
-appVersion: 2.4.53
+appVersion: 4.0.3
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
     tags:
       - bitnami-common
     version: 1.x.x
-description: Apache HTTP Server is an open-source HTTP server. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.
+description: Apache Cassandra is an open source distributed database management system designed to handle large amounts of data across many servers, providing high availability with no single point of failure.
 engine: gotpl
-home: https://github.com/bitnami/charts/tree/master/bitnami/apache
-icon: https://bitnami.com/assets/stacks/apache/img/apache-stack-220x234.png
+home: https://github.com/bitnami/charts/tree/master/bitnami/cassandra
+icon: https://bitnami.com/assets/stacks/cassandra/img/cassandra-stack-220x234.png
 keywords:
-  - apache
-  - http
-  - https
-  - www
-  - web
-  - reverse proxy
+  - cassandra
+  - database
+  - nosql
 maintainers:
   - email: containers@bitnami.com
     name: Bitnami
-name: apache
+name: cassandra
 sources:
-  - https://github.com/bitnami/bitnami-docker-apache
-  - https://httpd.apache.org
-version: 9.0.17
-
+  - https://github.com/bitnami/bitnami-docker-cassandra
+  - http://cassandra.apache.org
+version: 9.1.18
