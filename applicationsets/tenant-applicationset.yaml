@@ -4,7 +4,7 @@ metadata:
   name: my-tenants
 spec:
   generators:
-    - gi
+    - git:
         repoURL: https://github.com/nasirudheen/argo-nginx.git
         revision: main
         files:
