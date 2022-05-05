@@ -619,10 +619,10 @@ nodeExporter:
     ##
     externalIPs: []
 
-    hostPort: 9100
+    hostPort: 9200
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
-    servicePort: 9100
+    servicePort: 9200
     type: ClusterIP
 
 server:
