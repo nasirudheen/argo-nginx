@@ -22,8 +22,10 @@ spec:
           valueFiles:
             - values.yaml
       destination:
-        server: '{{k8s_cluster.address}}'
-        namespace: '{{k8s_cluster.namespace}}'
+        server: https://192.168.122.11:6443
+        namespace: my-nginx
+#        server: '{{k8s_cluster.address}}'
+#        namespace: '{{k8s_cluster.namespace}}'
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
