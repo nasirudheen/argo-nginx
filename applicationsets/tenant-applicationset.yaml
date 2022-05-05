@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: https://github.com/nasirudheen/argo-nginx.git 
         targetRevision: main
-        path: tenants/cluster2
+        path: tenants/cluster2/nginx
         helm:
           valueFiles:
             - values.yaml
