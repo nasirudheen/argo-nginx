@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: my-tenants
+  namespace: my-nginx
 spec:
   generators:
     - git:
@@ -12,6 +13,7 @@ spec:
   template:
     metadata:
       name: cluster2-temp1
+      namespace: my-nginx
     spec:
       project: my-apps
       source:
