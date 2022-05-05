@@ -622,8 +622,8 @@ nodeExporter:
     hostPort: 9200
     loadBalancerIP: ""
     loadBalancerSourceRanges: []
-    servicePort: 9200
-    type: LoadBalancer
+    servicePort: 9100
+    type: ClusterIP
 
 server:
   ## Prometheus server container name
@@ -1126,7 +1126,7 @@ server:
 pushgateway:
   ## If false, pushgateway will not be installed
   ##
-  enabled: false
+  enabled: true
 
   ## Use an alternate scheduler, e.g. "stork".
   ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
