@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: my-tenants
+  name: prometheus-for-tenants
   namespace: argocd
 spec:
   generators:
@@ -12,14 +12,14 @@ spec:
           - path: "argocd/tenants-discovery/**/config.json"
   template:
     metadata:
-      name: '{{tenant.name}}-nginx-temp'
+      name: '{{tenant.name}}-prometheus-temp'
       namespace: argocd
     spec:
       project: my-apps
       source:
         repoURL: https://github.com/nasirudheen/argo-nginx.git 
         targetRevision: main
-        path: 'tenants/{{tenant.name}}/nginx'
+        path: 'tenants/{{tenant.name}}/prometheus'
         helm:
           valueFiles:
             - values.yaml
