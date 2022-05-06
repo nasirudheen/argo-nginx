@@ -27,7 +27,7 @@ fullnameOverride: ""
 kubeVersion: ""
 ## @param clusterDomain Kubernetes Cluster Domain
 ##
-clusterDomain: cluster.local
+clusterDomain: cluster2.org
 ## @param extraDeploy Extra objects to deploy (value evaluated as a template)
 ##
 extraDeploy: []
@@ -194,7 +194,7 @@ containerSecurityContext:
 ## @param containerPorts.https Sets https port inside NGINX container
 ##
 containerPorts:
-  http: 8888
+  http: 8080
   https: ""
 ## NGINX containers' resource requests and limits
 ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
